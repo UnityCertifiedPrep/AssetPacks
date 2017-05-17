@@ -8,13 +8,12 @@ public class MovingTarget : MonoBehaviour {
 
     Vector3 initialPosition;
 
-	// Use this for initialization
 	void Start () {
         initialPosition = transform.position;
 	}
 	
-	// Update is called once per frame
 	void Update () {
+        // Move the target with a smooth cosine wave
         var x = magnitude * Mathf.Cos(Time.time / timePerCycle * 2 * Mathf.PI);
         transform.position = initialPosition + Vector3.left * x;
 	}

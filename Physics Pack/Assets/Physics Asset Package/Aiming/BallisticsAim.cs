@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Viewfinder class for the ballistics solving code.
 public class BallisticsAim : MonoBehaviour {
 
     public BallisticSolver solver;
@@ -16,6 +17,7 @@ public class BallisticsAim : MonoBehaviour {
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo))
         {
+			// Tell the ballistics solver what to aim for.
             solver.target = hitInfo.point;
         }
     }

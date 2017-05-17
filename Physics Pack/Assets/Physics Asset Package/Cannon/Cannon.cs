@@ -18,6 +18,7 @@ public class Cannon : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         var rb = other.GetComponent<Rigidbody>();
+        // Propel the projectile forward.
         rb.AddForce(gameObject.transform.up * thrust);
     }
 

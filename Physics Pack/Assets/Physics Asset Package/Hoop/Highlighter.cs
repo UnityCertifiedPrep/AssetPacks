@@ -8,15 +8,15 @@ public class Highlighter : MonoBehaviour {
     public float highlightTime = 5;
     float highlightExpireTime = 0;
 
-	// Use this for initialization
 	void Start () {
+        // Keep material for later.
         original = GetComponent<Renderer>().material;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	    if (Time.time > highlightExpireTime)
         {
+            // Reset the original material.
             GetComponent<Renderer>().material = original;
         }
 	}
